@@ -1,3 +1,6 @@
+$lightGreen: #75bb7c;
+$orange: #ff8c76;
+
 .App {
   text-align: left;
 }
@@ -7,7 +10,7 @@
 }
 
 .invBody {
-  background-color: #e0dfdf;
+  background-color: rgb(224, 223, 223);
 }
 
 .gridDiv {
@@ -16,7 +19,7 @@
 }
 
 .btnOff {
-  background: #ff8c76;
+  background: $orange;
   color: #fff !important;
   text-decoration: none !important;
   border: none;
@@ -27,4 +30,3 @@
   font-size: 10px;
   font-family: inherit;
 }
-/*# sourceMappingURL=app.css.map */
