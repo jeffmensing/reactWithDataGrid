@@ -1,47 +1,99 @@
 import React from 'react';
-import { customers } from './data.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-
+import 'devextreme/dist/css/dx.light.css';
+// import { customers } from './data.js';
 import DataGrid, {
   Selection,
   Column,
   SearchPanel,
   Button,
 } from 'devextreme-react/data-grid';
-import DropDownBox from 'devextreme-react/drop-down-box';
-import { Row } from 'devextreme-react/responsive-box';
 
-function SelectedCustomer(props: any) {
-  if(props.customer) {
-      return (
-        <>
-          {props.customer.id}
-        </>
-      );
-  }
-  return null;
-}
+class RecurringInvoiceGrid extends React.Component { 
+state = {
+  customers: [
+    {
+    'ID': 1,
+    'Customer': 'Colin Pear',
+    'Food': 'Pizza',
+    'Color': 'Blue',
+    'Animal': 'Koala',
+    'Car': 'Mustang',
+    'Location': 'USA',
+    },
+    {
+    'ID': 2,
+    'Customer': 'Colin Pear',
+    'Food': 'Pizza',
+    'Color': 'Blue',
+    'Animal': 'Koala',
+    'Car': 'Mustang',
+    'Location': 'USA',
+    },
+    {
+    'ID': 3,
+    'Customer': 'Colin Pear',
+    'Food': 'Pizza',
+    'Color': 'Blue',
+    'Animal': 'Koala',
+    'Car': 'Mustang',
+    'Location': 'USA',
+    },
+    {
+    'ID': 4,
+    'Customer': 'Colin Pear',
+    'Food': 'Pizza',
+    'Color': 'Blue',
+    'Animal': 'Koala',
+    'Car': 'Mustang',
+    'Location': 'USA',
+    },
+    {
+    'ID': 5,    
+    'Customer': 'Colin Pear',
+    'Food': 'Pizza',
+    'Color': 'Blue',
+    'Animal': 'Koala',
+    'Car': 'Mustang',
+    'Location': 'USA',
+    },
+    {
+    'ID': 6,
+    'Customer': 'Colin Pear',
+    'Food': 'Pizza',
+    'Color': 'Blue',
+    'Animal': 'Koala',
+    'Car': 'Mustang',
+    'Location': 'USA',
+    },
+    {
+    'ID': 7,
+    'Customer': 'Colin Pear',
+    'Food': 'Pizza',
+    'Color': 'Blue',
+    'Animal': 'Koala',
+    'Car': 'Mustang',
+    'Location': 'USA',
+    }
+  ]
+};
 
-
-class RecurringInvoiceGrid extends React.Component {
-  
-  myCommand (SelectedCustomer: any) {
-    alert(SelectedCustomer);   
-  } 
+  myCommand (e: any) {
+    // this.setState({ icon: 'fa fa-pause' });
+    console.log(this);
+    console.log(e);
+  };  
 
   render() {
-
   return (
     <div>
       <DataGrid
-        dataSource={customers}
+        dataSource={this.state.customers}
         keyExpr="ID"
         showColumnLines={false}
         columnAutoWidth={true}
-        rowAlternationEnabled={true}
+        rowAlternationEnabled={true} 
       >
-      <Selection mode="single" /> 
+      <Selection mode="multiple" /> 
       <Column
         caption="Customer"
         dataField="Customer"      
@@ -66,34 +118,33 @@ class RecurringInvoiceGrid extends React.Component {
         caption="Location"
         dataField="Location"
       />
-      <Column type="buttons">
-          <Button
-            name="btnOff"
-            cssClass="btnOff"
-            text="OFF"
-          />
+      <Column caption="On or Off" 
+              type="buttons"
+              >
+              <Button
+                name="btnOff"
+                cssClass="btnOff"
+                text="OFF"
+              />
       </Column>
-      <Column type="buttons">
-                    <Button
-                      text="Play"
-                      icon= ""
-                      hint="Play"
-                      onClick={this.myCommand(SelectedCustomer)}
-                    />
-                    <Button
-                        text="Edit"
-                        icon= "edit"
-                        hint="Edit"
-                        //onClick={this.myCommand}
-                    />
+      <Column caption="Actions"
+              type="buttons">
+              <Button
+                text=""
+                icon= "fa fa-play"
+                hint=""
+                onClick = {this.myCommand}
+              />
+              <Button
+                text=""
+                icon= "fa fa-edit"
+                hint="Edit"
+              />
       </Column>
-      <DropDownBox visible={true}
-        displayExpr="Customer"/>
-      <SearchPanel visible={customers} />
+      <SearchPanel visible={this.state.customers} />
       </DataGrid>
     </div>   
     );
   }
 }
-
 export default RecurringInvoiceGrid;
