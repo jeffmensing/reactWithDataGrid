@@ -6,8 +6,45 @@
   padding-left: 10px;
 }
 
+.mainDiv {
+  background-color: #e0dfdf;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .invBody {
   background-color: #e0dfdf;
+}
+
+.searchBar {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #ffffff;
+}
+
+.allCust {
+  padding: 10px;
+  width: auto;
+}
+
+.food {
+  padding: 10px;
+  width: auto;
+}
+
+.location {
+  padding: 10px;
+  width: auto;
 }
 
 .gridDiv {
@@ -15,8 +52,32 @@
   padding: 10px;
 }
 
+.dataGrdDiv {
+  background-color: #ffffff;
+}
+
+.dataGrd {
+  padding: 10px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
 .btnOff {
   background: #ff8c76;
+  color: #fff !important;
+  text-decoration: none !important;
+  border: none;
+  padding: 5px 30px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 10px;
+  font-family: inherit;
+}
+
+.btnOn {
+  background: #75bb7c;
   color: #fff !important;
   text-decoration: none !important;
   border: none;

@@ -6,7 +6,7 @@ export const customers = [
   'Color': 'Blue',
   'Animal': 'Koala',
   'Car': 'Mustang',
-  'Location': 'USA'
+  'Location': 'USA',
   },
   {
   'ID': 2,
@@ -15,7 +15,7 @@ export const customers = [
   'Color': 'Blue',
   'Animal': 'Koala',
   'Car': 'Mustang',
-  'Location': 'USA'
+  'Location': 'USA',
   },
   {
   'ID': 3,
@@ -24,7 +24,7 @@ export const customers = [
   'Color': 'Blue',
   'Animal': 'Koala',
   'Car': 'Mustang',
-  'Location': 'USA'
+  'Location': 'USA',
   },
   {
   'ID': 4,
@@ -33,7 +33,7 @@ export const customers = [
   'Color': 'Blue',
   'Animal': 'Koala',
   'Car': 'Mustang',
-  'Location': 'USA'
+  'Location': 'USA',
   },
   {
   'ID': 5,    
@@ -42,7 +42,7 @@ export const customers = [
   'Color': 'Blue',
   'Animal': 'Koala',
   'Car': 'Mustang',
-  'Location': 'USA'
+  'Location': 'USA',
   },
   {
   'ID': 6,
@@ -51,7 +51,7 @@ export const customers = [
   'Color': 'Blue',
   'Animal': 'Koala',
   'Car': 'Mustang',
-  'Location': 'USA'
+  'Location': 'USA',
   },
   {
   'ID': 7,
@@ -60,6 +60,6 @@ export const customers = [
   'Color': 'Blue',
   'Animal': 'Koala',
   'Car': 'Mustang',
-  'Location': 'USA'
+  'Location': 'USA',
   }
 ]
