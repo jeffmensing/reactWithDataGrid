@@ -4,9 +4,12 @@ import 'devextreme/dist/css/dx.light.css';
 import DataGrid, {
   Selection,
   Column,
-  SearchPanel,
   Button,
 } from 'devextreme-react/data-grid';
+import { SelectBox } from 'devextreme-react';
+import { customers } from './data';
+
+const food = ['Food','Pizza']; 
 
 class RecurringInvoiceGrid extends React.Component { 
 state = {
@@ -76,6 +79,7 @@ state = {
     }
   ],
   rowKeys : [] as any []
+
 };
 
 constructor(props: any) {
@@ -83,6 +87,7 @@ constructor(props: any) {
   this.myCommand = this.myCommand.bind(this);
   this.renderOnOff = this.renderOnOff.bind(this);
   this.renderPlayPause = this.renderPlayPause.bind(this);
+
 }
 
 myCommand (e: any) {
@@ -113,59 +118,89 @@ renderPlayPause(e: any) {
 
   render() {
   return (
-    <div>
-      <DataGrid
-        dataSource={this.state.customers}
-        keyExpr="ID"
-        showColumnLines={false}
-        columnAutoWidth={true}
-        rowAlternationEnabled={true} 
-        // onRowUpdated={}
-      >
-      <Selection mode="multiple" /> 
-      <Column
-        caption="Customer"
-        dataField="Customer"      
-      />
-      <Column
-        caption="Food"
-        dataField="Food"
-      />
-      <Column
-        caption="Color"
-        dataField="Color" 
-      />
-      <Column
-        caption="Animal"
-        dataField="Animal"
-      />
-      <Column
-        caption="Car"
-        dataField="Car" 
-      />
-      <Column
-        caption="Location"
-        dataField="Location"
-      />
-      <Column caption="On or Off" 
-              type="buttons"
-              >
-              <Button
-              render={this.renderOnOff} />              
-      </Column>
-      <Column caption="Actions"
-              type="buttons">
-              <Button render={this.renderPlayPause} />
-              <Button
-              text=""
-              icon= "fa fa-edit"
-              hint="Edit"
-              />
-      </Column>
-      <SearchPanel visible={this.state.customers} />
-      </DataGrid>
+    <div className="mainDiv">
+      <div className="searchBar">
+        <div className="allCust" >
+          <SelectBox className="allCustSb"
+            placeholder={"All Customers"}
+            dataSource={customers}
+            valueExpr="ID"
+            displayExpr="Customer"
+            width="350" />
+        </div>    
+        <div className="food">
+          <SelectBox
+            placeholder={"Food"}
+            dataSource={customers}
+            valueExpr="ID"
+            displayExpr="Food" />
+        </div>
+        <div className="location" >
+          <SelectBox
+            placeholder={"Location"}
+            dataSource={customers}
+            valueExpr="ID"
+            displayExpr="Location" />
+        </div>
+      </div>
+      <div className="dataGrdDiv">
+        <DataGrid className="dataGrd"
+          dataSource={this.state.customers}
+          keyExpr="ID"
+          showColumnLines={false}
+          showRowLines={true}
+          columnAutoWidth={true}
+          rowAlternationEnabled={true}           
+          // onRowUpdated={}
+        >
+        <Selection mode="multiple" /> 
+        <Column
+          caption="Customer"
+          dataField="Customer"     
+        />
+        <Column
+          caption="Food"
+          dataField="Food"
+        />
+        <Column
+          caption="Color"
+          dataField="Color" 
+        />
+        <Column
+          caption="Animal"
+          dataField="Animal"
+        />
+        <Column
+          caption="Car"
+          dataField="Car" 
+        />
+        <Column
+          caption="Location"
+          dataField="Location"
+          width={100}
+        />
+        <Column caption="On or Off" 
+                type="buttons"
+                >
+                <Button
+                render={this.renderOnOff} />              
+        </Column>
+        <Column caption="Actions"
+                type="buttons">
+                <Button render={this.renderPlayPause} />
+                <Button
+                text=""
+                icon= "fa fa-edit"
+                hint="Edit"
+                />
+        </Column>
+        </DataGrid>
+      </div>
     </div>   
     );
   }
+
+
+
 }
 export default RecurringInvoiceGrid;
